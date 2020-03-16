@@ -22,7 +22,7 @@ known_infections = 43
 initial_infections = st.sidebar.number_input(
     "Currently Known Regional Infections", value=known_infections, step=10, format="%i"
 )
-current_hosp = st.sidebar.number_input("Currently Hospitalized COVID-19 Patients", value=2, step=1, format="%i")
+current_hosp = st.sidebar.number_input("Currently Hospitalized/Infected COVID-19 Comcast EEs or Deps", value=0, step=1, format="%i")
 doubling_time = st.sidebar.number_input(
     "Doubling Time (days)", value=6, step=1, format="%i"
 )
@@ -42,7 +42,7 @@ hosp_los = st.sidebar.number_input("Hospital LOS", value=7, step=1, format="%i")
 #vent_los = st.sidebar.number_input("Vent LOS", value=10, step=1, format="%i")
 Penn_market_share = (
     st.sidebar.number_input(
-        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=15.000, step=0.001, format="%f"
+        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=0.008, step=0.001, format="%f"
     )
     / 100.0
 )
@@ -53,9 +53,9 @@ S = st.sidebar.number_input(
 total_infections = current_hosp / Penn_market_share / hosp_rate
 detection_prob = initial_infections / total_infections
 
-st.title("COVID-19 Hospital Impact Model for Epidemics: Adapted for Use by Comcast Pop Health")
+st.title("COVID-19 Hospital Impact Model for Epidemics: Adapted for use by Comcast Pop Health")
 st.markdown(
-    """*This tool was developed by the [Predictive Healthcare team](http://predictivehealthcare.pennmedicine.org/) at Penn Medicine and adapted by the Total Rewards Data Science Team. For questions and comments please see Chris Colameco"""
+    """*This tool was developed by the [Predictive Healthcare team](http://predictivehealthcare.pennmedicine.org/) at Penn Medicine and adapted by the Total Rewards Data Science Team. For questions and comments please see Chris Colameco (chris_colameco@comcast.com)"""
 )
 
 if st.checkbox("Show more info about this tool & Population Options"):
