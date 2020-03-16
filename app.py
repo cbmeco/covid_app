@@ -55,6 +55,10 @@ S = st.sidebar.number_input(
 
 st.title("COVID-19 Hospital Impact Model for Epidemics: Adapted for use by Comcast Total Rewards")
 st.markdown(
+    """This tool can be used to model out the potential number of new cases of COVID-19 within a Comcast Employee & Member population based in a specific geographic areas.""")
+st.markdown(
+    """Use the inputs to the left to adjust the assumptions of the model to match the area of interest. The tool is defaulted to examine the Philadelphia Metro Area. Below the first dropdown are assumptions to enter in for other locations""")
+st.markdown(
     """*This tool was adapted for use at Comcast by the TRIP Data Science team. It was originally developed by Penn Medicine's Predictive Healthcare team. For questions and comments please see Chris Colameco (chris_colameco@comcast.com)"""
 )
 
