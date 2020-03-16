@@ -47,7 +47,7 @@ Penn_market_share = (
     / 100.0
 )
 S = st.sidebar.number_input(
-    "Regional Population", 0.000, 1000000000, value=6096120, step=100000, format="%i"
+    "Regional Population", 0, 1000000000, value=6096120, step=100000, format="%i"
 )
 #current_hosp and slash before this if not working
 #total_infections = Penn_market_share / hosp_rate
