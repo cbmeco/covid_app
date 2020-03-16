@@ -37,7 +37,7 @@ hosp_rate = (
 #    st.sidebar.number_input("Ventilated %", 0, 100, value=1, step=1, format="%i")
 #    / 100.0
 #)
-hosp_los = st.sidebar.number_input("Hospital LOS", value=14, step=1, format="%i")
+hosp_los = st.sidebar.number_input("Length of Case", value=14, step=1, format="%i")
 #icu_los = st.sidebar.number_input("ICU LOS", value=9, step=1, format="%i")
 #vent_los = st.sidebar.number_input("Vent LOS", value=10, step=1, format="%i")
 Penn_market_share = (
