@@ -42,7 +42,7 @@ hosp_los = st.sidebar.number_input("Hospital LOS", value=7, step=1, format="%i")
 #vent_los = st.sidebar.number_input("Vent LOS", value=10, step=1, format="%i")
 Penn_market_share = (
     st.sidebar.number_input(
-        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=0.008, step=0.001, format="%f"
+        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=1.000, step=0.001, format="%f"
     )
     / 100.0
 )
