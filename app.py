@@ -53,7 +53,7 @@ S = st.sidebar.number_input(
 #total_infections = Penn_market_share / hosp_rate
 #detection_prob = initial_infections / total_infections
 
-st.title("COVID-19 Hospital Impact Model for Epidemics: Adapted for use by Comcast Total Rewards")
+st.title("COVID-19 Impact Model for Epidemics: Adapted for use by Comcast Total Rewards")
 st.markdown(
     """This tool can be used to model out the potential number of new cases of COVID-19 within a Comcast Employee & Member population based in a specific geographic areas.""")
 st.markdown(
