@@ -186,7 +186,7 @@ ax.plot(
 ax.legend(loc=0)
 ax.set_xlabel("Days from today")
 ax.grid("on")
-ax.set_ylabel("Daily Admissions")
+ax.set_ylabel("Daily New Cases Admissions")
 st.pyplot()
 
 admits_table = projection_admits[np.mod(projection_admits.index, 7) == 0].copy()
