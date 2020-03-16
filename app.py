@@ -49,9 +49,8 @@ Penn_market_share = (
 S = st.sidebar.number_input(
     "Regional Population", value=S_default, step=100000, format="%i"
 )
-
-total_infections = #current_hosp /
-Penn_market_share / hosp_rate
+#current_hosp and slash before this if not working
+total_infections = Penn_market_share / hosp_rate
 detection_prob = initial_infections / total_infections
 
 st.title("COVID-19 Hospital Impact Model for Epidemics: Adapted for use by Comcast Pop Health")
