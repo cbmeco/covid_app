@@ -16,7 +16,7 @@ montgomery = 826075
 bucks = 628341
 philly = 1581000
 S_default = delaware + chester + montgomery + bucks + philly
-known_infections = 43
+known_infections = 66
 
 # Widgets
 initial_infections = st.sidebar.number_input(
@@ -42,12 +42,12 @@ hosp_los = st.sidebar.number_input("Length of Case", value=14, step=1, format="%
 #vent_los = st.sidebar.number_input("Vent LOS", value=10, step=1, format="%i")
 Penn_market_share = (
     st.sidebar.number_input(
-        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=0.008, step=0.001, format="%f"
+        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=0.44, step=0.001, format="%f"
     )
     / 100.0
 )
 S = st.sidebar.number_input(
-    "Regional Population", value=S_default, step=100000, format="%i"
+    "Regional Population", value=6096120, step=100000, format="%i"
 )
 #current_hosp and slash before this if not working
 #total_infections = Penn_market_share / hosp_rate
@@ -64,9 +64,10 @@ st.markdown(
 
 if st.checkbox("Show more info about this tool & Population Options"):
     st.subheader("""Initial Conditions for Largest Pockets of Comcast EE's""")
-    st.markdown("""Phila Area: Known Infections (as of 3/16): 43, Comcast Pop: .008%, Regional Pop: 4119405""")
-    st.markdown("""NYC Area: Known Infections (as of 3/16): 950, Comcast Pop: .002%, Regional Pop: 8500000""")
-    st.markdown("""Seattle Area: Known Infections (as of 3/16): 676, Comcast Pop: .002%, Regional Pop: 3406000""")
+    st.markdown("""Phila Metro Area: Known Infections (as of 3/16): 43, Comcast Pop: .44%, Regional Pop: 6,096,120""")
+    st.markdown("""NYC Metro Area: Known Infections (as of 3/16): 950, Comcast Pop: .07%, Regional Pop: 21,045,000""")
+    st.markdown("""Seattle Metro Area: Known Infections (as of 3/16): 769, Comcast Pop: .18%, Regional Pop: 3,939,363""")
+    st.markdown("""Atlanta Metro Area: Known Infections (as of 3/16): 37, Comcast Pop: .14%, Regional Pop: 5,949,951""")
 
     st.subheader(
         "[Discrete-time SIR modeling](https://mathworld.wolfram.com/SIRModel.html) of infections/recovery"
@@ -223,7 +224,7 @@ for k, los in los_dict.items():
         - projection_admits.cumsum().shift(los).fillna(0)
     ).apply(np.ceil)
     census_dict[k] = census[k]
-    ax.plot(census.head(plot_projection_days)[k], ".-", label=k + " census")
+    ax.plot(census.head(plot_projection_days)[k], ".-", label="census")
     ax.legend(loc=0)
 
 ax.set_xlabel("Days from today")
