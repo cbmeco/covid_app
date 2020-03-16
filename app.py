@@ -199,7 +199,7 @@ if st.checkbox("Show Projected Admissions in tabular form"):
 
 st.subheader("Infected EE's + Deps (Census)")
 st.markdown(
-    "Projected **census** of COVID-19 patients, accounting for start and end of cases (length of infection = 14 (estimated)"
+    "Projected **census** of COVID-19 patients, accounting for start and end of cases (length of infection = 14 days (estimated)"
 )
 
 # ALOS for each category of COVID-19 case (total guesses)
