@@ -64,10 +64,14 @@ st.markdown(
 
 if st.checkbox("Show more info about this tool & Population Options"):
     st.subheader("""Initial Conditions for Largest Pockets of Comcast EE's""")
-    st.markdown("""Phila Metro Area: Known Infections (as of 3/16): 43, Comcast Pop: .44%, Regional Pop: 6,096,120""")
-    st.markdown("""NYC Metro Area: Known Infections (as of 3/16): 950, Comcast Pop: .07%, Regional Pop: 21,045,000""")
-    st.markdown("""Seattle Metro Area: Known Infections (as of 3/16): 769, Comcast Pop: .18%, Regional Pop: 3,939,363""")
-    st.markdown("""Atlanta Metro Area: Known Infections (as of 3/16): 37, Comcast Pop: .14%, Regional Pop: 5,949,951""")
+    st.markdown("""West Division: Known Infections as of 3/17: 1,946, Comcast EE's as share of pop: 0.02%, Regional Pop: 110,458,034""")
+    st.markdown("""Northeast Division: Known Infections as of 3/17: 690, Comcast EE's as share of pop: 0.03%, Regional Pop: 63,924,546""")
+    st.markdown("""Central Division: Known Infections as of 3/17: 792, Comcast EE's as share of pop: 0.03%, Regional Pop: 99,881,571""")
+
+#    st.markdown("""Phila Metro Area: Known Infections (as of 3/16): 43, Comcast Pop: .44%, Regional Pop: 6,096,120""")
+#    st.markdown("""NYC Metro Area: Known Infections (as of 3/16): 950, Comcast Pop: .07%, Regional Pop: 21,045,000""")
+#    st.markdown("""Seattle Metro Area: Known Infections (as of 3/16): 769, Comcast Pop: .18%, Regional Pop: 3,939,363""")
+#    st.markdown("""Atlanta Metro Area: Known Infections (as of 3/16): 37, Comcast Pop: .14%, Regional Pop: 5,949,951""")
 
     st.subheader(
         "[Discrete-time SIR modeling](https://mathworld.wolfram.com/SIRModel.html) of infections/recovery"
