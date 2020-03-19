@@ -165,14 +165,14 @@ beta_decay = 0.0
 s, i, r = sim_sir(S, I, R, beta, gamma, n_days, beta_decay=beta_decay)
 
 
-hosp = i * hosp_rate * Penn_market_share
+cases = i * hosp_rate * Penn_market_share
 #icu = i * icu_rate * Penn_market_share
 #vent = i * vent_rate * Penn_market_share
 
 days = np.array(range(0, n_days + 1))
-data_list = [days, hosp#, icu, vent
+data_list = [days, cases#, icu, vent
              ]
-data_dict = dict(zip(["day", "hosp", "icu", "vent"], data_list))
+data_dict = dict(zip(["day", "cases", "icu", "vent"], data_list))
 
 projection = pd.DataFrame.from_dict(data_dict)
 
@@ -188,7 +188,7 @@ projection_admits["day"] = range(projection_admits.shape[0])
 
 fig, ax = plt.subplots(1, 1, figsize=(10, 4))
 ax.plot(
-    projection_admits.head(plot_projection_days)["hosp"], ".-", label="Infected/Hospitalized"
+    projection_admits.head(plot_projection_days)["cases"], ".-", label="Infected/Hospitalized"
 )
 #ax.plot(projection_admits.head(plot_projection_days)["icu"], ".-", label="ICU")
 #ax.plot(projection_admits.head(plot_projection_days)["vent"], ".-", label="Ventilated")
@@ -214,7 +214,7 @@ st.markdown(
 # ALOS for each category of COVID-19 case (total guesses)
 
 los_dict = {
-    "hosp": hosp_los#,
+    "cases": hosp_los#,
     #"icu": icu_los,
     #"vent": vent_los,
 }
@@ -238,7 +238,7 @@ st.pyplot()
 
 census_df = pd.DataFrame(census_dict)
 census_df["day"] = census_df.index
-census_df = census_df[["day", "hosp"#, "icu", "vent"
+census_df = census_df[["day", "cases"#, "icu", "vent"
                        ]]
 
 census_table = census_df[np.mod(census_df.index, 7) == 0].copy()
