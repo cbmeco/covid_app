@@ -24,7 +24,7 @@ initial_infections = st.sidebar.number_input(
 )
 #current_hosp = st.sidebar.number_input("Currently Hospitalized/Infected COVID-19 Comcast EEs or Deps", value=1, step=1, format="%i")
 doubling_time = st.sidebar.number_input(
-    "Doubling Time (days)", value=7, step=1, format="%i"
+    "Doubling Time (days); to account for Social Distancing: Increase Doubling Time", value=7, step=1, format="%i"
 )
 hosp_rate = (
     st.sidebar.number_input("Infected Rate when at 100%, Hospitalization % at 5%", 0, 100, value=100, step=1, format="%i")
