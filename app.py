@@ -24,7 +24,7 @@ initial_infections = st.sidebar.number_input(
 )
 #current_hosp = st.sidebar.number_input("Currently Hospitalized/Infected COVID-19 Comcast EEs or Deps", value=1, step=1, format="%i")
 doubling_time = st.sidebar.number_input(
-    "Doubling Time (days)", value=6, step=1, format="%i"
+    "Doubling Time (days)", value=7, step=1, format="%i"
 )
 hosp_rate = (
     st.sidebar.number_input("Infected Rate when at 100%, Hospitalization % at 5%", 0, 100, value=100, step=1, format="%i")
@@ -42,12 +42,12 @@ hosp_los = st.sidebar.number_input("Length of Case", value=14, step=1, format="%
 #vent_los = st.sidebar.number_input("Vent LOS", value=10, step=1, format="%i")
 Penn_market_share = (
     st.sidebar.number_input(
-        "Comcast EEs + Dependents as Share of Regional Pop (%)", 0.000, 100.000, value=0.44, step=0.001, format="%f"
+        "Comcast EEs as Share of Regional Pop (%)", 0.0000, 100.0000, value=0.11, step=0.001, format="%f"
     )
     / 100.0
 )
 S = st.sidebar.number_input(
-    "Regional Population", 0, 1000000000, value=6096120, step=100000, format="%i"
+    "Regional Population", 0, 1000000000, value=12801989, step=100000, format="%i"
 )
 #current_hosp and slash before this if not working
 #total_infections = Penn_market_share / hosp_rate
@@ -57,7 +57,7 @@ st.title("COVID-19 Impact Model for Epidemics: Adapted for use by Comcast Total 
 st.markdown(
     """This tool can be used to model out the potential number of new cases of COVID-19 within a Comcast Employee & Member population based in a specific geographic areas.""")
 st.markdown(
-    """Use the inputs to the left to adjust the assumptions of the model to match the area of interest. The tool is defaulted to examine the Philadelphia Metro Area. Below the first dropdown are assumptions to enter in for other locations""")
+    """Use the inputs to the left to adjust the assumptions of the model to match the area of interest. The tool is defaulted to examine Pennsylvania. Below the first dropdown are assumptions to enter in for other locations""")
 st.markdown(
     """*This tool was adapted for use at Comcast by the TRIP Data Science team. It was originally developed by Penn Medicine's Predictive Healthcare team. For questions and comments please see Chris Colameco (chris_colameco@comcast.com)"""
 )
